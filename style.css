@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  /* Neutral */
+
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+  /* Gradients */
+
+  --First-Linear-From: hsl(0, 0%, 100%);
+  --First-Linear-To: hsl(0, 100%, 98%);
+
+  --Second-Linear-From: hsl(0, 80%, 86%);
+  --Second-Linear-To: hsl(0, 74%, 74%);
+
+  /* Font */
+
+  --Josefine-sans: "Josefin Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: var(--Josefine-sans);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 245, 245, 1) 35%
+  );
+  background-size: cover;
+}
+
+header {
+  height: 8.6rem;
+  display: grid;
+  place-items: center left;
+}
+
+header img {
+  width: 12rem;
+  margin-left: 3rem;
+}
+
+.image-container {
+  width: 100%;
+  height: 25rem;
+  background-image: url("/images/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text {
+  display: grid;
+  place-items: center;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+span {
+  padding: 0.2rem 0;
+}
+
+.first-span {
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 300;
+  color: var(--Desaturated-Red);
+  letter-spacing: 1.2rem;
+}
+
+.second-span {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--Dark-Grayish-Red);
+  display: block;
+  letter-spacing: 1.1rem;
+}
+
+.third-span {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--Dark-Grayish-Red);
+  display: block;
+  letter-spacing: 1.1rem;
+}
+
+p {
+  font-size: 1.35rem;
+  color: var(--Desaturated-Red);
+  line-height: 2.3rem;
+  width: 80%;
+}
+
+.input {
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+  width: 35rem;
+}
+
+input {
+  padding: 2rem 1.8rem;
+  width: 28rem;
+  border-radius: 2.5rem;
+  border: 1px solid var(--Desaturated-Red);
+  background-color: inherit;
+  color: var(--Desaturated-Red);
+  outline: none;
+  position: relative;
+}
+
+input:focus {
+  border: 1px solid var(--Soft-Red);
+  color: black;
+}
+
+button {
+  /* outline: 1px solid blue; */
+  width: 9.3rem;
+  height: 5.8rem;
+  background: linear-gradient(
+    135deg,
+    rgba(248, 191, 191, 1) 0%,
+    rgba(238, 140, 140, 1) 35%
+  );
+  position: absolute;
+  right: 1rem;
+  border-radius: 3rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--Second-Linear-From);
+  transition: all 0.2s ease;    
+}
+
+.error {
+  position: absolute;
+  right: 11rem;
+  top: 30%;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.email-text {
+  font-size: 0.7rem;
+  text-align: left;
+  margin-bottom: -5rem;
+  color: var(--Second-Linear-To);
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.view {
+    opacity: 1;
+    visibility: visible;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(8, 190px);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 3px;
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 245, 245, 1) 35%
+    );
+
+    /* background: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 245, 245, 1) 35%
+    ); */
+  }
+
+  header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+
+  header img {
+    margin-left: 11rem;
+  }
+
+  .image-container {
+    background-image: url("/images/hero-desktop.jpg");
+    height: 100%;
+    grid-column-start: 5;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+  }
+
+  .text {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 5;
+    grid-row-end: 5;
+    text-align: left;
+    /* outline: 1px solid red; */
+    width: 70%;
+    margin: auto;
+    place-items: center baseline;
+    margin-bottom: -6rem;
+  }
+
+  .email-text {
+    margin-left: 3rem;
+  }
+
+  .first-span {
+    font-size: 6rem;
+  }
+
+  .second-span {
+    font-size: 5rem;
+  }
+
+  .third-span {
+    font-size: 5rem;
+  }
+
+  .text p {
+    padding: 2rem 0;
+  }
+
+  .input {
+    width: 40rem;
+  }
+
+  input {
+    width: 38rem;
+    margin-bottom: -1rem;
+  }
+
+  @media (min-width: 1400px) {
+    header {
+      height: 13rem;
+    }
+  }
+}
